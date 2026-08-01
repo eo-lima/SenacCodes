@@ -202,7 +202,7 @@ class Carro:
         return imposto
 
 class NotaFiscal:
-    def __init__(self, tipo, serie, cnpj, razao, data, valorprodutos, icms, frete, ipi, total):
+    def __init__(self, tipo, serie, cnpj, razao, data, valorprodutos, icms, frete, ipi):
         self.tipo = tipo
         self.serie = serie
         self.cnpj = cnpj
@@ -212,7 +212,6 @@ class NotaFiscal:
         self.icms = icms
         self.frete = frete
         self.ipi = ipi
-        self.total = total
 
     def obter_numero(self):
         return self.serie
@@ -226,6 +225,32 @@ class NotaFiscal:
         print("Razão social alterada com sucesso!")
 
     def calcular_total(self):
-        self.total = (self.valorprodutos + self.frete) - (self.icms + self.ipi)
+        self.total = self.valorprodutos + self.frete + self.icms + self.ipi
         return self.total
-        
+
+tipo = input("Digite o tipo da nota fiscal: 1 - Entrada, 2 - Saída: ")
+while True:
+    if tipo == "1":
+        tipo = "Entrada"
+        break
+    elif tipo == "2":
+        tipo = "Saída"
+        break
+    else:
+        print("Tipo inválido. Digite novamente.")
+        continue
+serie = input("Digite a série da nota fiscal: 1, 2 ou 3")
+while True:
+    if serie == "1" or serie == "2" or serie == "3":
+        break
+    else:
+        print("Série inválida. Digite novamente.")
+        serie = input("Digite a série da nota fiscal: 1, 2 ou 3")
+cnpj = input("Digite o CNPJ da empresa: ")
+razao = input("Digite a razão social da empresa: ")
+data = input("Digite a data de emissão da nota fiscal: ")
+valorprodutos = float(input("Digite o valor dos produtos: "))
+icms = float(input("Digite o valor do ICMS: "))
+frete = float(input("Digite o valor do frete: "))
+ipi = float(input("Digite o valor do IPI: "))
+nota = NotaFiscal(tipo, serie, cnpj, razao, data, valorprodutos, icms, frete, ipi)
