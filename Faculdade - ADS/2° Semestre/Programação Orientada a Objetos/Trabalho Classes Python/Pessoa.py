@@ -157,12 +157,47 @@ class Triangulo:
         else:
             print(f"É o lado C, {self.lados[2]}")
 
-        
+class AlunoAcademia:
+    def __init__(self, nome, idade, peso, altura):
+        self.nome = nome
+        self.idade = idade
+        self.peso = peso
+        self.altura = altura
+        self.mensalidade = 120.0
 
+    def calcular_imc(self):
+        self.imc = self.peso / (self.altura**2)
+        return self.imc
 
-        
+    def obter_mensalidade(self):
+        if self.idade > 18:
+            return f"R${self.mensalidade}"
+        else: 
+            return f"R${self.mensalidade//2}"
     
+class Carro:
+    def __init__(self, modelo, marca, cor, ano, valor, consumo):
+        self.modelo = modelo
+        self.marca = marca
+        self.cor = cor
+        self.ano = ano
+        self.valor = valor
+        self.consumo = consumo
+        self.nivel = 0
 
+    def abastecer(self, abastecer):
+        self.nivel = self.nivel + abastecer
+        print("Carro abastecido!")
         
+    def andar(self, andar):
+        self.nivel = self.nivel - andar
+        print("Você andou!")
 
+    def mostrar_nivel(self):
+        return self.nivel
+
+    def calcular_imposto(self):
+        imposto = self.valor * 0.025
+        print(f"O imposto é de R${imposto}")
+        return imposto
 
