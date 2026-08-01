@@ -100,7 +100,7 @@ class Circulo:
         return (3.14*(self.raio**2))
 
     def calcular_circunferencia(self):
-        return 2 * 3,14 * self.raio
+        return 2 * 3.14 * self.raio
 
 class Agenda:
     def __init__(self, dia, mes, ano, anotacao):
@@ -201,3 +201,31 @@ class Carro:
         print(f"O imposto é de R${imposto}")
         return imposto
 
+class NotaFiscal:
+    def __init__(self, tipo, serie, cnpj, razao, data, valorprodutos, icms, frete, ipi, total):
+        self.tipo = tipo
+        self.serie = serie
+        self.cnpj = cnpj
+        self.razao = razao
+        self.data = data
+        self.valorprodutos = valorprodutos
+        self.icms = icms
+        self.frete = frete
+        self.ipi = ipi
+        self.total = total
+
+    def obter_numero(self):
+        return self.serie
+
+    def obter_data_emissao(self):
+        return self.data
+
+    def alterar_razao_social(self):
+        novarazao = input("Digite a nova razão social: ")
+        self.razao = novarazao
+        print("Razão social alterada com sucesso!")
+
+    def calcular_total(self):
+        self.total = (self.valorprodutos + self.frete) - (self.icms + self.ipi)
+        return self.total
+        
