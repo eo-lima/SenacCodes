@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>  
+            <th height="100" width="200">Empresa</th>
+            <th>Contato</th>
+            <th>País</th>
+        </tr>
+        <tr>
+            <td>Senac</td>
+            <td>Ederson</td>
+            <td>Brasil</td>
+        </tr>
+    </table>
+
+    <ul type="square">
+        <li>Mundial: 1</li>
+        <li>Libertadores: 3</li>
+        <li>Brasileirão: 12</li>
+        <li>Copa do Brasil: 4</li>
+    </ul>
+    <ol>
+        <li>Mundial: 1</li>
+        <li>Libertadores: 3</li>
+        <li>Brasileirão: 12</li>
+        <li>Copa do Brasil: 4</li>
+    </ol>
+    <code>olá sou o enzo</code>
+    <pre>olá sou o enzo</pre>
+    <abbr title="Sociedade Esportiva Palmeiras">SEP</abbr><br><br>
+
+    <fieldset><legend>Dados Pessoais</legend>
+        <form>
+            <!-- Cadastro do Nome -->
+            <section>
+                <label for="primeironome">Primeiro Nome:</label><br>
+                <input type="text" id="primeironome" name="primeironome" placeholder="Digite seu nome..." maxlength="5" size="100"><br><br>
+                <label for="ultimonome">Sobrenome:</label><br>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome..." required><br><br>
+            </section>
+            <!-- Cadastro de Email e Senha -->
+            <section>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" placeholder="Digite aqui seu email..."><br><br>
+                <label for="senha">Senha:</label><br>
+                <input type="password" id="senha" placeholder="Digite aqui sua senha..."><br><br>
+            </section>
+            <!-- Cadastro de Data de Nascimento -->
+            <section>
+                <label for="data">Data de Nascimento:</label><br>
+                <input type="date" id="data"><br><br>
+            </section>
+            <!-- Cadastro de Sexo -->
+            <section>
+            <label>Selecione seu sexo:</label><br>
+            <input type="radio" id="Masculino" name="sexocadastro" value="Masculino">
+            <label for="Masculino">Masculino</label><br>
+            <input type="radio" id="Feminino" name="sexocadastro" value="Feminino">
+            <label for="Feminino">Feminino</label><br><br>
+            </section>
+            <!-- Cadastro de Linguagens -->
+            <section>
+            <label>Escolha suas linguagens:</label><br>
+            <input type="checkbox" id="html" name="linguagens" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="python" name="linguagens" value="python">
+            <label for="python">Python</label><br>
+            <input type="checkbox" id="java" name="linguagens" value="Java">
+            <label for="java">Java</label><br>
+            <input type="checkbox" id="javascript" name="linguagens" value="JavaScript">
+            <label for="javascript">JavaScript</label><br><br>
+            </section>
+
+            <button type="submit">Cadastrar</button>
+            <button type="reset">Limpar Formulário</button>
+           
+        </form>
+    </fieldset>
+</body>
+</html>
