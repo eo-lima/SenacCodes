@@ -9,7 +9,8 @@ class Bibliotecario(Usuario):
         self.livros = []
 
     def cadastrar_livro(self, livro):
-        self.livros.append(livro)
+        if livro not in self.livros:
+            self.livros.append(livro)
 
     def remover_livro(self, livro):
         self.livros.pop(livro)
