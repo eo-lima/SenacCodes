@@ -8,11 +8,20 @@ class Bibliotecario(Usuario):
         self.turno = turno
         self.livros = []
 
+    def logar(self):
+        return super().logar()
+    
     def cadastrar_livro(self, livro):
-        if livro not in self.livros:
-            self.livros.append(livro)
+        if self.logar() == True:
+            if livro not in self.livros:
+                self.livros.append(livro)
+        else:
+            print("Não Logado.")
 
     def remover_livro(self, livro):
-        self.livros.pop(livro)
+        if self.logar() == True:
+            self.livros.pop(livro)
+        else:
+            print("Não Logado.")
 
     

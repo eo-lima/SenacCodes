@@ -8,5 +8,9 @@ class Atendente(Usuario):
         self.turno = turno
         self.emprestimos = []
 
+    def logar(self):
+        return super().logar()
+
     def cadastro_emprestimo(self, emprestimo):
-        self.emprestimos.append(emprestimo)
+        if self.logar() == True:
+            self.emprestimos.append(emprestimo)

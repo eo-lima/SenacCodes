@@ -5,9 +5,11 @@ class Usuario:
         self.login = login
         self.senha = senha
         self.perfil = perfil
+        self.loginperfil = "admin"
+        self.senhaperfil = "1234"
 
-    def logar(self, login, senha):
-        if self.login == login and self.senha == senha:
+    def logar(self):
+        if self.login == self.loginperfil and self.senha == self.senhaperfil:
             return True
         else:
             return False
