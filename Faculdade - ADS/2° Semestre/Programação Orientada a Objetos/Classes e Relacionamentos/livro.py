@@ -9,3 +9,5 @@ class Livro:
         self.publicacao = publicacao
         self.paginas = paginas
         self.quantidade = quantidade
+        self.autor = autor
+        self.editora = editora
