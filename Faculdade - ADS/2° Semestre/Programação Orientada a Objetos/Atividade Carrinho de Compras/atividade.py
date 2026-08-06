@@ -36,14 +36,14 @@ class Cliente:
         print(f"Pedido finalizado, valor total: R${total}")
 
 while True:
-    print("===================================")
-    print("|               MENU              |")
-    print("|1 - Cadastrar Produto            |")
-    print("|2 - Cadastrar Cliente            |")
-    print("|3 - Adicionar Produto ao Carrinho|")
-    print("|4 - Remover Produto do Carrinho  |")
-    print("|5 - Finalizar Compra             |")
-    print("===================================")
+    print("====================================")
+    print("|               MENU               |")
+    print("|1 - Cadastrar Produto             |")
+    print("|2 - Cadastrar Cliente             |")
+    print("|3 - Adicionar Produto ao Carrinho |")
+    print("|4 - Remover Produto do Carrinho   |")
+    print("|5 - Finalizar Compra              |")
+    print("====================================")
     opcao = input("Digite qual operação deseja fazer: ")
     match opcao:
         case "1":
@@ -66,15 +66,12 @@ while True:
             print("Cliente cadastrado com sucesso.")
         case "3":
             nome = input("Digite o nome do cliente: ")
-            for cliente.nome in clientes:
-                
-                produto = input("Digite o produto que deseja adicionar ao carrinho: ")
-                if produto in produtos:
-
-                # else:
-                    print("Produto não encontrado.")
-            else:
-                print("Cliente não encontrado.")            
+            for cliente in clientes:
+                if cliente == cliente.nome:
+                    produto = input("Digite o nome do produto que deseja adicionar ao carrinho: ")
+                    for produto in produtos:
+                        if produto == produto.nome:
+                                    
         case "4":
             remover = input("Digite o nome do produto que deseja retirar do carrinho: ")
             if remover in CarrinhoCompra.produtos:
