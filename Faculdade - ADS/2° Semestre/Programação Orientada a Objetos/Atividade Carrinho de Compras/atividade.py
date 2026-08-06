@@ -1,6 +1,5 @@
 produtos = []
 clientes = []
-carrinhos = []
 
 class Produto:
     def __init__(self, nome, preco):
@@ -16,8 +15,11 @@ class CarrinhoCompra:
         print(f"Produto {produto.nome} adicionado!\n")
 
     def remover_produto(self, produto: Produto):
-        self.produtos.pop(produto)
-        print(f"Produto removido com sucesso!\n")
+    for produto in self.produtos:
+        if produto.nome == nome_produto:
+            self.produtos.remove(produto)
+            print(f"Produto {nome_produto} removido com sucesso!\n")
+            return
     
     def calcular_preco(self) -> float:
         soma = 0
@@ -65,18 +67,64 @@ while True:
             clientes.append(cliente)
             print("Cliente cadastrado com sucesso.")
         case "3":
-            nome = input("Digite o nome do cliente: ")
+            if len(clientes) == 0:
+                print("Nenhum cliente cadastrado.")
+                continue
+            if len(produtos) == 0:
+                print("Nenhum produto cadastrado.")
+                continue
+
+            nome_cliente = input("Digite o nome do cliente: ")
+            cliente_encontrado = None
             for cliente in clientes:
-                if cliente == cliente.nome:
-                    produto = input("Digite o nome do produto que deseja adicionar ao carrinho: ")
-                    for produto in produtos:
-                        if produto == produto.nome:
-                                    
+                if cliente.nome == nome_cliente:
+                    cliente_encontrado = cliente
+                    break
+            if cliente_encontrado is None:
+                print("Cliente não encontrado.")
+                continue
+
+            nome_produto = input("Digite o nome do produto: ")
+            produto_encontrado = None
+            for produto in produtos:
+                if produto.nome == nome_produto:
+                    produto_encontrado = produto
+                    break
+
+            if produto_encontrado is None:
+                print("Produto não encontrado.")
+                continue
+
+            cliente_encontrado.carrinho.adicionar_produto(produto_encontrado)
         case "4":
-            remover = input("Digite o nome do produto que deseja retirar do carrinho: ")
-            if remover in CarrinhoCompra.produtos:
-                CarrinhoCompra.remover_produto(remover)
-            else:
-                print("Produto não encontrado dentro do carrinho.")
-    # case "5":
+            if len(clientes) == 0:
+                print("Não tem clientes cadastrados.")
+                continue
+
+            if len(produtos) == 0:
+                print("Não tem produtos cadastrados.")
+            
+            cliente = input("Digite o nome do cliente: ")
+            cliente_encontrado = None
+            for cliente in clientes:
+                if cliente.nome == cliente:
+                    cliente_encontrado = cliente
+                    break
+            
+            if cliente_encontrado is None:
+                print("Cliente não encontrado.")
+                continue
+            
+            produto = input("Digite o nome do produto que deseja remover do carrinho: ")
+            produto_encontrado = None
+            for produto in produtos:
+                if produto.nome == produto:
+                    produto_encontrado = produto
+                    break
+            if produto_encontrado is None:
+                print("Produto não encontrado.")
+                continue
+            
+            cliente_encontrado.carrinho.remover_produto(produto_encontrado)
+        case "5":
         
