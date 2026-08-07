@@ -1,6 +1,5 @@
 produtos = []
 clientes = []
-carrinhos = []
 
 class Produto:
     def __init__(self, nome, preco):
@@ -93,7 +92,7 @@ while True:
                 print("Produto não encontrado.")
                 continue
 
-            carrinhos.append(cliente_encontrado.carrinho.adicionar_produto(produto_encontrado))
+            cliente_encontrado.carrinho.adicionar_produto(produto_encontrado)
         case "4":
             if len(clientes) == 0:
                 print("Não tem clientes cadastrados.")
