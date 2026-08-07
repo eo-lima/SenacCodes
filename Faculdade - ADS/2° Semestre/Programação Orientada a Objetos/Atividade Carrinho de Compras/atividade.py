@@ -1,5 +1,6 @@
 produtos = []
 clientes = []
+carrinhos = []
 
 class Produto:
     def __init__(self, nome, preco):
@@ -15,11 +16,8 @@ class CarrinhoCompra:
         print(f"Produto {produto.nome} adicionado!\n")
 
     def remover_produto(self, produto: Produto):
-    for produto in self.produtos:
-        if produto.nome == nome_produto:
-            self.produtos.remove(produto)
-            print(f"Produto {nome_produto} removido com sucesso!\n")
-            return
+        self.produtos.remove(produto)
+        print(f"Produto {produto.nome} removido com sucesso.\n")
     
     def calcular_preco(self) -> float:
         soma = 0
@@ -95,7 +93,7 @@ while True:
                 print("Produto não encontrado.")
                 continue
 
-            cliente_encontrado.carrinho.adicionar_produto(produto_encontrado)
+            carrinhos.append(cliente_encontrado.carrinho.adicionar_produto(produto_encontrado))
         case "4":
             if len(clientes) == 0:
                 print("Não tem clientes cadastrados.")
@@ -104,10 +102,10 @@ while True:
             if len(produtos) == 0:
                 print("Não tem produtos cadastrados.")
             
-            cliente = input("Digite o nome do cliente: ")
+            nome_cliente = input("Digite o nome do cliente: ")
             cliente_encontrado = None
             for cliente in clientes:
-                if cliente.nome == cliente:
+                if cliente.nome == nome_cliente:
                     cliente_encontrado = cliente
                     break
             
@@ -115,10 +113,10 @@ while True:
                 print("Cliente não encontrado.")
                 continue
             
-            produto = input("Digite o nome do produto que deseja remover do carrinho: ")
+            nome_produto = input("Digite o nome do produto que deseja remover do carrinho: ")
             produto_encontrado = None
-            for produto in produtos:
-                if produto.nome == produto:
+            for produto in cliente_encontrado.carrinho.produtos:
+                if produto.nome == nome_produto:
                     produto_encontrado = produto
                     break
             if produto_encontrado is None:
@@ -127,4 +125,27 @@ while True:
             
             cliente_encontrado.carrinho.remover_produto(produto_encontrado)
         case "5":
+            if len(clientes) == 0:
+                print("Não foi cadastrado clientes.")
+                continue
+            
+            nome_cliente = input("Digite o nome do cliente: ")
+            cliente_encontrado = None
+            for cliente in clientes:
+                if cliente.nome == nome_cliente:
+                    cliente_encontrado = cliente
+                    break
+            if cliente_encontrado is None:
+                print("Cliente não encontrado no sistema.")
+                continue
+            
+            print(f"Valor total do carrinho: R${cliente_encontrado.carrinho.calcular_preco()}\n")
+            confirmar = input("Deseja confirmar o pedido?\n1 - Confirmar\n2 - Cancelar\n")
+            match confirmar:
+                case "1":
+                    cliente_encontrado.finalizar_pedido()
+                    continue
+                case "2":
+                    print("Pedido cancelado.")
+                    continue
         
