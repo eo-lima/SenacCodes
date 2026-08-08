@@ -123,9 +123,9 @@ while True:
             autor = input("Digite o nome do autor: ")
             musicas_encontradas = False
             for musica in musicas:
-                if musica.autor == autor:
+                if musica.artista == autor:
                     musicas_encontradas = True
-                    print(musica.nome)
+                    print(musica.titulo)
             if musicas_encontradas == False:
                 print("Não há músicas com esse autor.")
                 break            
