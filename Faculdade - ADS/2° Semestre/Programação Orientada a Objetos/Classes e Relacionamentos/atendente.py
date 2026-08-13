@@ -1,4 +1,5 @@
 from usuario import Usuario
+from emprestimo import Emprestimo
 
 class Atendente(Usuario):
     def __init__(self, nome, email, login, senha, perfil, matricula, ramal, turno):
@@ -11,6 +12,6 @@ class Atendente(Usuario):
     def logar(self):
         return super().logar()
 
-    def cadastro_emprestimo(self, emprestimo):
+    def cadastro_emprestimo(self, emprestimo: Emprestimo):
         if self.logar() == True:
             self.emprestimos.append(emprestimo)
