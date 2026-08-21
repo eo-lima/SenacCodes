@@ -1,0 +1,18 @@
+div{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    transition: 2s
+}
+
+div:hover{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: 2s;
+}
+
+div:none{
+    transition: 2s;
+}
+
