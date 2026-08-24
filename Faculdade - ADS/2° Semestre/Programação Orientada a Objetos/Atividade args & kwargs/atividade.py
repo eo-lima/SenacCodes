@@ -7,12 +7,19 @@ class Pessoa:
         self.email = email
         self.telefone = telefone
 
+    def criar_usuario(tipo, **dados):
+        if tipo == "1":
+            Cliente.criar_usuario(**dados)
+
 class Cliente(Pessoa):
     def __init__(self, endereco, ponto_de_referencia = "Sem ponto de referência", *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.endereco = endereco
         self.ponto_de_referencia = ponto_de_referencia
-    
+
+    def criar_usuario(tipo, **dados):
+        cliente = Cliente(**dados)
+        clientes.append(cliente)
 
 class Entregador(Pessoa):
     def __init__(self, veiculo, placa, avaliacao = "Sem avaliação", *args, **kwargs):
@@ -21,6 +28,10 @@ class Entregador(Pessoa):
         self.placa = placa
         self.avaliacao = avaliacao
 
+    def criar_usuario(tipo, **dados):
+        entregador = Entregador(**dados)
+        entregadores.append(entregador)
+
 class Pedido:
     def __init__(self, cliente: Cliente, entregador: Entregador, *itens, **info):
         self.cliente = cliente
@@ -28,16 +39,13 @@ class Pedido:
         self.itens = itens
         self.info = info
 
-    def registrar_pedido(self):
-        print(f"Nome do Cliente:\n{self.cliente.nome}\n\nNúmero de Itens:\n{len(self.itens)}\n")
-        print(f"Itens:")
-        for item in self.itens:
-            print(item)
-        print("\nInformações: ")
-        for chave, valor in self.info.items():
-            print(f"{chave}: {valor}")
-        print(f"Entregador: {self.entregador.nome}")
-
+    def registrar_pedido(cliente, *itens, **info):
+        resumo = f"Pedido de {cliente.nome}, Itens: {len(itens)}, [{', '.join(itens)}]"
+        if info == True:
+            extras = " - " + ", ".join([f"{chave}: {valor}" for chave, valor in info.items()])
+            resumo += extras
+        return resumo
+    
 while True:
     print("============================")
     print("=           MENU            ")
@@ -97,10 +105,17 @@ while True:
                         continue
                     else:
                         break
+            entregador = input("Digite o nome do entregador: ")
+            existe = None
+            for e in entregadores:
+                if e.nome == entregador:
+                    existe = True
+                    break
+            if existe == None:
+                print("Entregador não encontrado no sistema.")
+                continue
+            
                 
-                
-
-
             else:
                 print("Esse usuário não está registrado no sistema.")
                 continue
