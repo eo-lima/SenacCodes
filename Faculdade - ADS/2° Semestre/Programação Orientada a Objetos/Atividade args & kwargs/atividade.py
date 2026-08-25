@@ -8,8 +8,17 @@ class Pessoa:
         self.telefone = telefone
 
     def criar_usuario(tipo, **dados):
-        if tipo == "1":
-            Cliente.criar_usuario(**dados)
+        tipo = tipo.lower()
+        if tipo == "cliente":
+            usuario = Cliente(**dados)
+            clientes.append(usuario)
+            return usuario
+        elif tipo == "entregador":
+            usuario = Entregador(**dados)
+            entregadores.append(usuario)
+            return usuario
+        else:
+            raise ValueError("Tipo não existente de usuário, apenas cliente e entregador.")
 
 class Cliente(Pessoa):
     def __init__(self, endereco, ponto_de_referencia = "Sem ponto de referência", *args, **kwargs):
@@ -17,9 +26,6 @@ class Cliente(Pessoa):
         self.endereco = endereco
         self.ponto_de_referencia = ponto_de_referencia
 
-    def criar_usuario(tipo, **dados):
-        cliente = Cliente(**dados)
-        clientes.append(cliente)
 
 class Entregador(Pessoa):
     def __init__(self, veiculo, placa, avaliacao = "Sem avaliação", *args, **kwargs):
@@ -28,10 +34,6 @@ class Entregador(Pessoa):
         self.placa = placa
         self.avaliacao = avaliacao
 
-    def criar_usuario(tipo, **dados):
-        entregador = Entregador(**dados)
-        entregadores.append(entregador)
-
 class Pedido:
     def __init__(self, cliente: Cliente, entregador: Entregador, *itens, **info):
         self.cliente = cliente
@@ -39,10 +41,10 @@ class Pedido:
         self.itens = itens
         self.info = info
 
-    def registrar_pedido(cliente, *itens, **info):
-        resumo = f"Pedido de {cliente.nome}, Itens: {len(itens)}, [{', '.join(itens)}]"
-        if info == True:
-            extras = " - " + ", ".join([f"{chave}: {valor}" for chave, valor in info.items()])
+    def registrar_pedido(self):
+        resumo = f"Pedido de {self.cliente.nome}, Itens: {len(self.itens)}, [{', '.join(self.itens)}], Entregador: {self.entregador.nome}"
+        if self.info:
+            extras = " - " + ", ".join([f"{chave}: {valor}" for chave, valor in self.info.items()])
             resumo += extras
         return resumo
     
@@ -51,71 +53,96 @@ while True:
     print("=           MENU            ")
     print("============================")
     print("1 - Criar Usuário")
-    print("2 - Registrar Pedido")
-    print("3 - Sair")
+    print("2 - Criar Entregador")
+    print("3 - Registrar Pedido")
+    print("4 - Sair")
     opcao = input("Digite a opção que deseja executar: ")
     match opcao:
         case "1":
-            opcao = input("Digite qual tipo de usuário será criado (1 - Cliente, 2 - Entregador): ")
-            if opcao == "1":
-                nomeusuario = input("Digite o nome completo do usuário: ")
-                existe = None
-                for c in clientes:
-                    if c.nome == nomeusuario:
-                        existe = True
-                        break
-                if existe == True:
-                    print("Usuário já existe com esse nome.")
-                    continue
-                emailusuario = input("Digite o email do usuário: ")
-                existe = None
-                for c in clientes:
-                    if c.email == emailusuario:
-                        existe = True
-                        break
-                if existe == True:
-                    print("Usuário já existe com esse email.")
-                    continue
-                telefoneusuario = input("Digite o telefone do usuário: ")
-                existe = None
-                for c in clientes:
-                    if c.telefone == telefoneusuario:
-                        existe = True
-                        break
-                if existe == True:
-                    print("Usuário já existe com esse telefone.")
-                    continue
-                enderecousuario = input("Digite o endereço do usuário: ")
-                ponto_de_referencia = input("(Opcional) Digite o ponto de referência do seu usuário: ")
-                cliente = Cliente(enderecousuario, ponto_de_referencia, nomeusuario, emailusuario, telefoneusuario)
-                clientes.append(cliente)
-                print("Usuário cadastrado com sucesso.")
-        case "2":
-            usuariopedido = input("Digite o nome do cliente que pediu: ")
+            nome = input("Nome: ")
+            email = input("Email :")
+            telefone = input("Telefone: ")
+            endereco = input("Endereço: ")
+            ponto_de_referencia = input("Ponto de Referência: ") or "Sem ponto de referência"
+
             existe = None
             for c in clientes:
-                if c.nome == usuariopedido:
-                    existe = True
-            if existe == True:
-                itenspedidos = []
-                while itens != 0:
-                    itens = input("Digite o nome dos produtos que serão pedidos (0 - Cancela o Loop): ")
-                    if itens != 0:
-                        itenspedidos.append(itens)
-                        continue
-                    else:
-                        break
-            entregador = input("Digite o nome do entregador: ")
-            existe = None
-            for e in entregadores:
-                if e.nome == entregador:
+                if c.nome == nome:
                     existe = True
                     break
-            if existe == None:
-                print("Entregador não encontrado no sistema.")
+            if existe == True:
+                print("Usuário já existente no sistema.")
                 continue
-            
-                
             else:
-                print("Esse usuário não está registrado no sistema.")
+                cliente = Pessoa.criar_usuario(
+                    "cliente",
+                    endereco=endereco,
+                    nome=nome,
+                    email=email,
+                    telefone=telefone,
+                    ponto_de_referencia=ponto_de_referencia
+                )
+                print("Cliente cadastrado com sucesso.")
+
+
+        case "2":
+            nome = input("Nome: ")
+            email = input("Email: ")
+            telefone = input("Telefone: ")
+            veiculo = input("Veículo: ")
+            placa = input("Placa: ")
+            avaliacao = input("Avaliação: ") or "Sem avaliação"
+
+            existe = None
+            for e in entregadores:
+                if e.nome == nome:
+                    existe = True
+                    break
+            if existe == True:
+                print("Esse entregador já existe no sistema.")
                 continue
+
+            entregador = Pessoa.criar_usuario(
+                "entregador",
+                veiculo=veiculo,
+                placa=placa,
+                nome=nome,
+                email=email,
+                telefone=telefone
+            )
+            entregadores.append(entregador)
+            print("Entregador cadastrado com sucesso.")
+
+        case "3":
+            clientenome = input("Nome do cliente: ")
+            cliente_encontrado = None
+            for c in clientes:
+                if c.nome == clientenome:
+                    cliente_encontrado = c
+                    break
+            if cliente_encontrado is None:
+                print("Esse cliente não está cadastrado no sistema.")
+                continue
+            entregadornome = input("Nome do entregador: ")
+            entregador_encontrado = None
+            for e in entregadores:
+                if e.nome == entregadornome:
+                    entregador_encontrado = e
+                    break
+            if entregador_encontrado is None:
+                print("Esse entregador não está cadastrado no sistema.")
+                continue
+            itenspedidos = []
+            while True:
+                itens = input("Digite o nome dos produtos (0 - Encerra o Loop): ")
+                if itens == "0":
+                    break
+                itenspedidos.append(itens)
+
+            pagamento = input("Qual a forma de pagamento?") or "Desconhecida"
+            desconto = input("Quanto de desconto?") or "Sem desconto"
+            pedido = Pedido(cliente_encontrado, entregador_encontrado, *itenspedidos, pagamento=pagamento, desconto=desconto)
+            print(pedido.registrar_pedido())
+
+        case "4":
+            break
