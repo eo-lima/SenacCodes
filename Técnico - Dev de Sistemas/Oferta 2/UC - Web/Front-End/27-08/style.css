@@ -1,0 +1,73 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.cabecalho {
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 30px */
+}
+
+.cabecalho h2{
+    color: white;
+    font-family: 'Verdana', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.cabecalho p{
+    color:white;
+    margin: 15px
+}
+
+.banner{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    background-image:url(img/lojatenis.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: black, 2px, solid;
+}
+
+.banner h1{
+    color: white;
+    font-family: 'Verdana', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin-right: 70%;
+    margin-top: 10%;
+}
+
+.banner p{
+    color:white;
+    font-family: 'Verdana', sans-serif;
+    font-weight: lighter;
+    max-width: 24%;
+    margin-right: 66.5%;
+    font-size: 13px;
+    margin-top: -1.5%;
+}
+
+hr {
+    border: none;
+    background-color: black;
+    height: 1px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
