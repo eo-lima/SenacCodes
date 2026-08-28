@@ -44,6 +44,12 @@ html, body {
     background-repeat: no-repeat;
     border-bottom: black, 2px, solid;
     padding-top: 2%;
+    transition: background-size 0.5s ease-in-out;
+
+}
+
+.banner:hover {
+    background-size: 105%;
 }
 
 .banner h1{
@@ -85,4 +91,46 @@ h3 {
 
 .teste{
     height: 1000px;
+}
+
+@media (max-width: 768px) {
+    .cabecalho {
+        height: auto;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .cabecalho h2 {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .cabecalho p {
+        font-size: 12px;
+        margin: 5px;
+    }
+
+    .banner {
+        height: 40vh;
+        padding-top: 15%;
+        background-position: center;
+    }
+
+    .banner h1 {
+        font-size: 28px;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .banner p {
+        font-size: 12px;
+        max-width: 80%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 16px;
+        text-align: center;
+    }
 }
