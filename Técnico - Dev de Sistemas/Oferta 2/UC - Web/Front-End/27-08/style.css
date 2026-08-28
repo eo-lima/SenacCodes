@@ -3,7 +3,7 @@ html, body {
     height: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: #DFDFDF;
+    background-color: #ebebeb;
 }
 
 .cabecalho {
@@ -88,6 +88,7 @@ h3 {
     font-family: 'Verdana', sans-serif;
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
 }
 
 .teste{
@@ -143,9 +144,11 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     height: 100%;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
-    gap: 12.5%;
+    gap: 7%;
+    align-items: center;
+    justify-content: center;
 }
 
 .container{
@@ -177,7 +180,7 @@ h3 {
 
 .container p{
     font-size: 20px;
-    font-family: 'Verdana', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     margin-bottom: 13%;
     color: rgb(0, 46, 0)
@@ -191,7 +194,7 @@ h3 {
     background-color: rgb(187, 0, 0);
     color: white;
     width: 80%;
-    height: 10%;
+    height: 9%;
     border-radius: 20px;
     border: 0px;
     transition: all 0.3s ease;
