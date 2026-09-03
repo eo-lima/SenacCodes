@@ -205,6 +205,47 @@ h3 {
 }
 }
 
+@media (min-width: 769px) and (max-width: 1199px) {
+
+    .cabecalho {
+        height: 8%;
+    }
+
+    .cabecalho h2 {
+        font-size: 17px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .cabecalho p {
+        font-size: 14px;
+        margin: 10px;
+    }
+
+    .banner {
+        height: 45vh;
+        padding-top: 8%;
+        background-position: center;
+    }
+
+    .banner h1 {
+        font-size: 34px;
+        margin-right: 55vw;
+        margin-top: 12%;
+    }
+
+    .banner p {
+        font-size: 14px;
+        max-width: 35%;
+        margin-right: 50%;
+        margin-top: -1%;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
 /* Parte do Catálogo --------------------------------------------------------------------------- */
 
 .catalogo {
