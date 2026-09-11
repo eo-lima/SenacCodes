@@ -56,7 +56,14 @@ while loop:
         case "3":
             tipo_de_produto = input("Qual tipo de produto deseja cadastrar?\n(1 - Áudio, 2 - Eletroportátil, 3 - Linha Branca, 4 - Vídeo)")
             if tipo_de_produto == "1":
-                
+                nome = input("Digite o nome do produto: ")
+                while True:
+                    try:
+                        preco = int(input("Digite o preço do produto: "))
+                        break
+                    except ValueError:
+                        print("Digite apenas números.")
+                        continue
  
 
                 
