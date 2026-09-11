@@ -1,4 +1,6 @@
-from produtos import Produto
-
 class Estoque:
-    def __init__(self):
+     
+    lista_audio = []
+    lista_eletroportatil = []
+    lista_linhabranca = []
+    lista_video = []

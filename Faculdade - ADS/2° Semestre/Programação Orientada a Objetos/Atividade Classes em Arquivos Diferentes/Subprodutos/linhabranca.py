@@ -5,3 +5,4 @@ class LinhaBranca(Produto):
         super().__init__(*args, **kwargs)
         self.consumo = consumo
         self.classificacao = classificacao
+        self.comissao = 0.15

@@ -4,3 +4,4 @@ class Eletroportateis(Produto):
     def __init__(self, voltagem, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.voltagem = voltagem
+        self.comissao = 0.10
