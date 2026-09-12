@@ -1,8 +1,13 @@
 from Subpessoas.cliente import Cliente
 from Subpessoas.vendedor import Vendedor
+from Subprodutos.audio import Audio
+from Subprodutos.eletroportatil import Eletroportateis
+from Subprodutos.linhabranca import LinhaBranca
+from Subprodutos.video import Video
+from estoque import Estoque
+from venda import Venda
+from pessoas import Pessoa
 
-clientes = []
-vendedores = []
 loop = True
 
 while loop:
@@ -28,7 +33,7 @@ while loop:
                         print("Digite apenas números.")
                         continue
                 cliente = Cliente(nome, cpf)
-                clientes.append(cliente)
+                Pessoa.clientes.append(cliente)
                 print("\033[32mCliente cadastrado!\033[0m")
             elif tipo_de_usuario == "2":
                 nome = input("Digite o nome do vendedor: ")
@@ -40,33 +45,33 @@ while loop:
                         print("Digite apenas números.")
                         continue
                 vendedor = Vendedor(nome, cpf)
-                vendedores.append(vendedor)
+                Pessoa.vendedores.append(vendedor)
+                print("\033[32mVendedor cadastrado!\033[0m")
             else:
                 print("\033[31mOpção Inválida.\033[0m")
         case "2":
-            listar = input("Qual tipo de usuário deseja listar? (1 - Clientes, 2 - Vendedores)")
+            listar = input("Qual tipo de usuário deseja listar? (1 - Clientes, 2 - Vendedores)\n")
             if listar == "1":
                 print("\033[32mLista de Clientes: \033[0m\n")
-                for cliente in clientes:
+                for cliente in Pessoa.clientes:
                     print(f"Nome: {cliente.nome}\nCPF: {cliente.cpf}\n")
             elif listar == "2":
                 print("\033[32mLista de Vendedores: \033[0m\n")
-                for vendedor in vendedores:
+                for vendedor in Pessoa.vendedores:
                     print(f"Nome: {vendedor.nome}\nCPF: {vendedor.cpf}\n")
         case "3":
-            tipo_de_produto = input("Qual tipo de produto deseja cadastrar?\n(1 - Áudio, 2 - Eletroportátil, 3 - Linha Branca, 4 - Vídeo)")
+            tipo_de_produto = input("Qual tipo de produto deseja cadastrar?\n(1 - Áudio, 2 - Eletroportátil, 3 - Linha Branca, 4 - Vídeo)\n")
             if tipo_de_produto == "1":
-                nome = input("Digite o nome do produto: ")
-                while True:
-                    try:
-                        preco = int(input("Digite o preço do produto: "))
-                        break
-                    except ValueError:
-                        print("Digite apenas números.")
-                        continue
- 
-
-                
-
-
-                        
+                Audio.cadastrar_produto()
+            elif tipo_de_produto == "2":
+                Eletroportateis.cadastrar_produto()
+            elif tipo_de_produto == "3":
+                LinhaBranca.cadastrar_produto()
+            elif tipo_de_produto == "4":
+                Video.cadastrar_produto()
+            else:
+                print("\033[31mOpção Inválida.\033[0m")
+        case "4":
+            Estoque.listar_produtos()
+        case "5":
+            Venda.realizar_venda()

@@ -2,5 +2,5 @@ from pessoas import Pessoa
 
 class Vendedor(Pessoa):
     def __init__(self, *args, **kwargs):
-        super().__init__()
-        self.email = email
+        super().__init__(*args, **kwargs)
+        self.comissao = 0
