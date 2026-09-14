@@ -5,12 +5,15 @@ from Subpessoas.cliente import Cliente
 from Subpessoas.vendedor import Vendedor
 
 class Venda:
-    def __init__(self, produtos: list, cliente: Cliente, vendedor: Vendedor):
-        self.produtos = produtos
+    def __init__(self, cliente: Cliente, vendedor: Vendedor, *produtos):
         self.cliente = cliente
         self.vendedor = vendedor
+        self.produtos = produtos
 
     def realizar_venda():
+
+        produtos_compra = []
+
         nomecliente = input("Digite o nome do cliente: ")
         cliente_encontrado = None
         for cliente in Pessoa.clientes:
@@ -29,39 +32,52 @@ class Venda:
             if vendedor_encontrado == None:
                 print("\033[31mVendedor não encontrado.\033[0m")
             else:
-                nomeproduto = input("Qual o nome do produto que será comprado? ")
-                produto_encontrado = None
-                for audio in Estoque.lista_audio:
-                    if audio._nome == nomeproduto:
-                        produto_encontrado = audio
-                        tipo_produto = "Áudio"
+                adicionar_produto = "1"
+                while adicionar_produto == "1":
+                    nomeproduto = input("Qual o nome do produto que será comprado? ")
+                    produto_encontrado = None
+                    for audio in Estoque.lista_audio:
+                        if audio._nome == nomeproduto:
+                            produto_encontrado = audio
+                            produtos_compra.append(audio)
+                            break
+                    if produto_encontrado == None:
+                        for eletroportatil in Estoque.lista_eletroportatil:
+                            if eletroportatil._nome == nomeproduto:
+                                produto_encontrado = eletroportatil
+                                produtos_compra.append(eletroportatil)
+                                break
+                    if produto_encontrado == None:
+                        for linhabranca in Estoque.lista_linhabranca:
+                            if linhabranca._nome == nomeproduto:
+                                produto_encontrado = linhabranca
+                                produtos_compra.append(linhabranca)
+                                break
+                    if produto_encontrado == None:
+                        for video in Estoque.lista_video:
+                            if video._nome == nomeproduto:
+                                produto_encontrado = video
+                                while True:
+                                    try:
+                                        quantidade = input("Quantos produtos serão comprados?")
+                                        if quantidade > video._quantidade:
+                                            print("\033[31mNão é possível comprar mais produtos do que o disponível no estoque.\033[0m")
+                                            break
+                                        break
+                                    except ValueError:
+                                        print("Digite apenas números.")
+                                        continue
+                                produto = {"produto": video, "quantidade": quantidade}
+                                produtos_compra.append(produto)
+                                break
+                    if produto_encontrado == None:
+                        print("\033[31mProduto não encontrado.\033[0m")
                         break
-                if produto_encontrado == None:
-                    for eletroportatil in Estoque.lista_eletroportatil:
-                        if eletroportatil._nome == nomeproduto:
-                            produto_encontrado = eletroportatil
-                            tipo_produto = "Eletroportatil"
-                            break
-                if produto_encontrado == None:
-                    for linhabranca in Estoque.lista_linhabranca:
-                        if linhabranca._nome == nomeproduto:
-                            produto_encontrado = linhabranca
-                            tipo_produto = "Linha Branca"
-                            break
-                if produto_encontrado == None:
-                    for video in Estoque.lista_video:
-                        if video._nome == nomeproduto:
-                            produto_encontrado = video
-                            tipo_produto = "Vídeo"
-                            break
-                if produto_encontrado == None:
-                    print("\033[31mProduto não encontrado.\033[0m")
-                else:
-                    print(f"\n\033[32mInformações: \033[0m\n\nProduto: {produto_encontrado._nome}\nTipo de Produto: {tipo_produto}\nPreço: {produto_encontrado._preco}\nQuantidade: {produto_encontrado._quantidade}")
-                    confirmar = input("Qual será a forma de pagamento? (1 - A vista, 2 - Parcelado)")
+                    else:
+                        adicionar_produto = input("Deseja adicionar mais um produto a compra? (1 - Sim, 2 - Não)")
 
-                
-                    
-
-
-            
+                if adicionar_produto == "2":
+                    valor_total = 0
+                    for produto in produtos_compra:
+                        valor_total = valor_total + produto.preco
+                    print(f"\033[32mInformações da Compra: \033[0m\nProdutos:\n")
