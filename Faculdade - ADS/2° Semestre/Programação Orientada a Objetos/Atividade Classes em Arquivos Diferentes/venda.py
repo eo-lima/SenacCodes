@@ -126,9 +126,11 @@ class Venda:
                         for produto in produtos_compra:
                             print(f"Produto: {produto["produto"]._nome}\nQuantidade: {produto["quantidade"]}\n")
                         print(f"Valor Total: R${valor_total}\n")
-                        while True:
+                        loop_pagamento = True
+                        while loop_pagamento:
                             forma_pagamento = input("Qual será a forma de pagamento? (1 - A vista, 2 - Parcelado)")
                             if forma_pagamento == "1":
+                                valor_total = 0
                                 for produto in produtos_compra:
                                     valor_total = valor_total + (produto["produto"]._preco * produto["quantidade"])
                                 print(f"\033[32mInformações da Compra: \033[0m\n")
@@ -144,7 +146,7 @@ class Venda:
                                             print("\033[31mSó é possível parcelar a partir de 2 parcelas.\033[0m")
                                             continue
                                         else:
-                                            valor_total = valor_total + ((valor_total*10)/100)
+                                            valor_total = 0
                                             print(f"\033[32mExtrato da Compra: \033[0m\n")
                                             for produto in produtos_compra:
                                                 valor_total = valor_total + (produto["produto"]._preco * produto["quantidade"])
@@ -154,8 +156,8 @@ class Venda:
                                                 print(f"Produto: {produto["produto"]._nome}\nQuantidade: {produto["quantidade"]}\n")
                                             print(f"Sub-total: R${valor_total}\n")
                                             print(f"Acréscimo: R${(valor_total*10)/100}")
-                                            print(f"Valor de cada parcela ({parcelas}): {valor_total/parcelas}")
-                                            print(f"Valor Total: {valor_total}")
+                                            print(f"Valor de cada parcela ({parcelas}): R${(valor_total + ((valor_total*10))/100)/parcelas}")
+                                            print(f"Valor Total: {valor_total + ((valor_total*10)/100)}")
                                             break
                                     except ValueError:
                                         print("Digite apenas números.")
@@ -177,7 +179,11 @@ class Venda:
                                     historico = [produtos_compra, valor_total]
                                     cliente.compras.append(historico)
                                     for produto in produtos_compra:
-                                        produto._quantidade = produto._quantidade - produto["quantidade"]
+                                        produto["produto"]._quantidade = produto["produto"]._quantidade - produto["quantidade"]
                                     print("\033[32mCompra concluída com sucesso!\033[0m")
-                                    print(vendedor._comissao)
-                                    print(cliente.compra)
+                                    loop_pagamento = False
+                                    break
+                                else:
+                                    print("\033[31mCompra cancelada.\033[0m")
+                                    loop_pagamento = False
+                                    break
