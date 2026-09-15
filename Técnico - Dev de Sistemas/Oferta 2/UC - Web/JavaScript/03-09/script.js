@@ -1,8 +1,13 @@
-let p1 = 2;
-let p2 = 3;
-
-function Multiplicacao(p1, p2){
-    return p1 * p2
+function maiorNumero(n1, n2){
+    if (n1 > n2){
+        alert(`${n1} é maior que ${n2}`)
+    }
+    else if (n1 < n2){
+        alert(`${n2} é maior que ${n1}`)
+    }
+    else{
+        alert("São iguais.")
+    }
 }
 
-console.log(Multiplicacao());
+maiorNumero(3, 5)
