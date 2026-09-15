@@ -2,9 +2,11 @@ from estoque import Estoque
 from produtos import Produto
 
 class Audio(Produto):
+
+    comissao = 0.05
+    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.comissao = 0.05
 
     def cadastrar_produto():
         nome = input("Digite o nome do produto de Áudio: ")

@@ -1,3 +1,7 @@
+from Subprodutos.audio import Audio
+from Subprodutos.eletroportatil import Eletroportateis
+from Subprodutos.linhabranca import LinhaBranca
+from Subprodutos.video import Video
 from estoque import Estoque
 from pessoas import Pessoa
 from produtos import Produto
@@ -39,37 +43,73 @@ class Venda:
                     for audio in Estoque.lista_audio:
                         if audio._nome == nomeproduto:
                             produto_encontrado = audio
-                            produtos_compra.append(audio)
-                            break
+                            while True:
+                                try:
+                                    quantidade = int(input("Quantos produtos serão comprados?"))
+                                    if quantidade > audio._quantidade:
+                                        print("\033[31mNão é possível comprar mais produtos do que o disponível no estoque.\033[0m")
+                                        break
+                                    else:
+                                        produto = {"produto": audio, "quantidade": quantidade}
+                                        produtos_compra.append(produto)
+                                        print("\033[32mProduto adicionado com sucesso!\033[0m")
+                                        break
+                                except ValueError:
+                                    print("Digite apenas números.")
+                                    continue
                     if produto_encontrado == None:
                         for eletroportatil in Estoque.lista_eletroportatil:
                             if eletroportatil._nome == nomeproduto:
                                 produto_encontrado = eletroportatil
-                                produtos_compra.append(eletroportatil)
-                                break
+                                while True:
+                                    try:
+                                        quantidade = int(input("Quantos produtos serão comprados?"))
+                                        if quantidade > eletroportatil._quantidade:
+                                            print("\033[31mNão é possível comprar mais produtos do que o disponível no estoque.\033[0m")
+                                            break
+                                        else:
+                                            produto = {"produto": eletroportatil, "quantidade": quantidade}
+                                            produtos_compra.append(produto)
+                                            print("\033[32mProduto adicionado com sucesso!\033[0m")
+                                    except ValueError:
+                                        print("Digite apenas números.")
+                                        continue
                     if produto_encontrado == None:
                         for linhabranca in Estoque.lista_linhabranca:
                             if linhabranca._nome == nomeproduto:
                                 produto_encontrado = linhabranca
-                                produtos_compra.append(linhabranca)
-                                break
+                                while True:
+                                    try:
+                                        quantidade = int(input("Quantos produtos serão comprados?"))
+                                        if quantidade > linhabranca._quantidade:
+                                            print("\033[31mNão é possível comprar mais produtos do que o disponível no estoque.\033[0m")
+                                            break
+                                        else:
+                                            produto = {"produto": linhabranca, "quantidade": quantidade}
+                                            produtos_compra.append(produto)
+                                            print("\033[32mProduto adicionado com sucesso!\033[0m")
+                                            break
+                                    except ValueError:
+                                        print("Digite apenas números.")
+                                        continue
                     if produto_encontrado == None:
                         for video in Estoque.lista_video:
                             if video._nome == nomeproduto:
                                 produto_encontrado = video
                                 while True:
                                     try:
-                                        quantidade = input("Quantos produtos serão comprados?")
+                                        quantidade = int(input("Quantos produtos serão comprados?"))
                                         if quantidade > video._quantidade:
                                             print("\033[31mNão é possível comprar mais produtos do que o disponível no estoque.\033[0m")
                                             break
-                                        break
+                                        else:
+                                            produto = {"produto": video, "quantidade": quantidade}
+                                            produtos_compra.append(produto)
+                                            print("\033[32mProduto adicionado com sucesso!\033[0m")
+                                            break
                                     except ValueError:
                                         print("Digite apenas números.")
                                         continue
-                                produto = {"produto": video, "quantidade": quantidade}
-                                produtos_compra.append(produto)
-                                break
                     if produto_encontrado == None:
                         print("\033[31mProduto não encontrado.\033[0m")
                         break
@@ -77,7 +117,67 @@ class Venda:
                         adicionar_produto = input("Deseja adicionar mais um produto a compra? (1 - Sim, 2 - Não)")
 
                 if adicionar_produto == "2":
-                    valor_total = 0
-                    for produto in produtos_compra:
-                        valor_total = valor_total + produto.preco
-                    print(f"\033[32mInformações da Compra: \033[0m\nProdutos:\n")
+                    if len(produtos_compra) > 0:
+                        valor_total = 0
+                        for produto in produtos_compra:
+                            valor_total = valor_total + (produto["produto"]._preco * produto["quantidade"])
+                        print(f"\033[32mInformações da Compra: \033[0m\n")
+                        print("Produtos:\n")
+                        for produto in produtos_compra:
+                            print(f"Produto: {produto["produto"]._nome}\nQuantidade: {produto["quantidade"]}\n")
+                        print(f"Valor Total: R${valor_total}\n")
+                        while True:
+                            forma_pagamento = input("Qual será a forma de pagamento? (1 - A vista, 2 - Parcelado)")
+                            if forma_pagamento == "1":
+                                for produto in produtos_compra:
+                                    valor_total = valor_total + (produto["produto"]._preco * produto["quantidade"])
+                                print(f"\033[32mInformações da Compra: \033[0m\n")
+                                print("Produtos:\n")
+                                for produto in produtos_compra:
+                                    print(f"Produto: {produto["produto"]._nome}\nQuantidade: {produto["quantidade"]}\n")
+                                print(f"Valor Total: R${valor_total}\n")
+                            elif forma_pagamento == "2":
+                                while True:
+                                    try:
+                                        parcelas = int(input("Quantas parcelas?"))
+                                        if parcelas <= 1:
+                                            print("\033[31mSó é possível parcelar a partir de 2 parcelas.\033[0m")
+                                            continue
+                                        else:
+                                            valor_total = valor_total + ((valor_total*10)/100)
+                                            print(f"\033[32mExtrato da Compra: \033[0m\n")
+                                            for produto in produtos_compra:
+                                                valor_total = valor_total + (produto["produto"]._preco * produto["quantidade"])
+                                            print(f"\033[32mInformações da Compra: \033[0m\n")
+                                            print("Produtos:\n")
+                                            for produto in produtos_compra:
+                                                print(f"Produto: {produto["produto"]._nome}\nQuantidade: {produto["quantidade"]}\n")
+                                            print(f"Sub-total: R${valor_total}\n")
+                                            print(f"Acréscimo: R${(valor_total*10)/100}")
+                                            print(f"Valor de cada parcela ({parcelas}): {valor_total/parcelas}")
+                                            print(f"Valor Total: {valor_total}")
+                                            break
+                                    except ValueError:
+                                        print("Digite apenas números.")
+                            else:
+                                print("\033[31mOpção Inválida.\033[0m")
+                                continue
+                            while True:
+                                confirmar_compra = input("Confirmar Compra? (1 - Sim, 2 - Não)") 
+                                if confirmar_compra == "1":
+                                    for produto in produtos_compra:
+                                        if produto["produto"] is Audio:
+                                            vendedor._comissao = vendedor._comissao + (valor_total*audio.comissao)
+                                        elif produto["produto"] is Eletroportateis:
+                                            vendedor._comissao = vendedor._comissao + (valor_total*eletroportatil.comissao)
+                                        elif produto["produto"] is LinhaBranca:
+                                            vendedor._comissao = vendedor._comissao + (valor_total*linhabranca.comissao)
+                                        else:
+                                            vendedor._comissao = vendedor._comissao + (valor_total*Video.comissao)
+                                    historico = [produtos_compra, valor_total]
+                                    cliente.compras.append(historico)
+                                    for produto in produtos_compra:
+                                        produto._quantidade = produto._quantidade - produto["quantidade"]
+                                    print("\033[32mCompra concluída com sucesso!\033[0m")
+                                    print(vendedor._comissao)
+                                    print(cliente.compra)

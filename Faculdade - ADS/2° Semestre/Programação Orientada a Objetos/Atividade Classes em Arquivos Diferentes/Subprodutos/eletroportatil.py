@@ -2,10 +2,13 @@ from estoque import Estoque
 from produtos import Produto
 
 class Eletroportateis(Produto):
+
+    comissao = 0.10
+    
     def __init__(self, voltagem, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.voltagem = voltagem
-        self.comissao = 0.10
+        
 
     def cadastrar_produto():
         nome = input("Digite o nome do produto Eletroportatil: ")
