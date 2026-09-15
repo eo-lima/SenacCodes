@@ -169,13 +169,13 @@ class Venda:
                                 if confirmar_compra == "1":
                                     for produto in produtos_compra:
                                         if produto["produto"] is Audio:
-                                            vendedor._comissao = vendedor._comissao + (valor_total*audio.comissao)
+                                            vendedor._comissao = vendedor._comissao + ((produto["produto"]._preco*produto["quantidade"])*audio.comissao)
                                         elif produto["produto"] is Eletroportateis:
-                                            vendedor._comissao = vendedor._comissao + (valor_total*eletroportatil.comissao)
+                                            vendedor._comissao = vendedor._comissao + ((produto["produto"]._preco*produto["quantidade"])*eletroportatil.comissao)
                                         elif produto["produto"] is LinhaBranca:
-                                            vendedor._comissao = vendedor._comissao + (valor_total*linhabranca.comissao)
+                                            vendedor._comissao = vendedor._comissao + ((produto["produto"]._preco*produto["quantidade"])*linhabranca.comissao)
                                         else:
-                                            vendedor._comissao = vendedor._comissao + (valor_total*Video.comissao)
+                                            vendedor._comissao = vendedor._comissao + ((produto["produto"]._preco*produto["quantidade"])*video.comissao)
                                     historico = [produtos_compra, valor_total]
                                     cliente.compras.append(historico)
                                     for produto in produtos_compra:

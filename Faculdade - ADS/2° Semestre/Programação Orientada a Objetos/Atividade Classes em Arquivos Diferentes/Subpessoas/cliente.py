@@ -19,12 +19,12 @@ class Cliente(Pessoa):
         else:
             if len(cliente.compras) > 0:
                 print(f"Histórico de Compras de {cliente.nome}: ")
-                i = 0
                 for compra in cliente.compras:
-                    if i > len(cliente.compras):
-                        break
-                    print(f"Produto: {compra[0][0]["produto"]._nome}, Quantidade: {compra[0][0]["quantidade"]}, Valor Total: R${cliente.compras[i][1]}\n")
-                    i = i+1
+                    produtos_compra = compra[0]
+                    valor_total = compra[1]
+                    for i, produto in enumerate(produtos_compra):
+                        print(f"Produto ({i+1}): {produto['produto']._nome}, Quantidade: {produto['quantidade']}")
+                    print(f"Valor Total: R${valor_total}\n")
             else:
                 print("\033[31mCliente com nenhuma compra registrada.\033[0m")
 

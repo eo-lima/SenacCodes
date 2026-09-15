@@ -21,6 +21,7 @@ while loop:
     print("\033[32m5 - Registrar Venda\033[0m")
     print("\033[32m6 - Exibir Comissão do Vendedor\033[0m")
     print("\033[32m7 - Histórico de Compras do Cliente\033[0m")
+    print("\033[32m8 - Sair\033[0m")
     opcao = input("Digite a opção que deseja: ")
     match opcao:
         case "1":
@@ -81,3 +82,8 @@ while loop:
             Vendedor.mostrar_comissao()
         case "7":
             Cliente.exibir_compras()
+        case "8":
+            print("\033[31mSaindo...\033[0m")
+            break
+        case _:
+            print("\033[31mOpção Inválida.\033[0m")
