@@ -14,7 +14,7 @@ class ConsoleView:
         print(f"{self.VERDE}5 - Registrar Venda{self.RESET}")
         print(f"{self.VERDE}6 - Exibir Comissão do Vendedor{self.RESET}")
         print(f"{self.VERDE}7 - Histórico de Compras do Cliente{self.RESET}")
-        print(f"{self.VERDE}8 - Devolução{self.RESET}")
+        print(f"{self.VERDE}8 - Devolução e troca{self.RESET}")
         print(f"{self.VERDE}9 - Sair{self.RESET}")
         return input("Digite a opção que deseja: ")
 
@@ -98,9 +98,26 @@ class ConsoleView:
             for indice, item in enumerate(produtos, start=1):
                 print(
                     f"Produto ({indice}): {item['produto']._nome}, "
-                    f"Quantidade: {item['quantidade']}"
+                    f"Quantidade: {item['quantidade']}, "
+                    f"Disponível para devolução/troca: "
+                    f"{item.get('quantidade_disponivel', 0)}"
                 )
             print(f"Valor Total: R${valor_total}\n")
+
+    def mostrar_itens_elegiveis(self, itens):
+        print("Produtos dentro do prazo de garantia:")
+        for indice, (_, item) in enumerate(itens, start=1):
+            data_venda = item["data_venda"].strftime("%d/%m/%Y")
+            print(
+                f"{indice} - {item['produto']._nome} | "
+                f"Compra: {data_venda} | "
+                f"Disponível: {item['quantidade_disponivel']}"
+            )
+
+    def escolher_operacao_devolucao(self):
+        return input(
+            "Escolha: (1 - Devolver, 2 - Trocar pelo mesmo produto)\n"
+        )
 
     def adicionar_mais_produtos(self):
         return input(

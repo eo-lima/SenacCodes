@@ -83,3 +83,63 @@ class VendaController:
             self.view.mostrar_mensagem("Compra concluída com sucesso!", "verde")
         else:
             self.view.mostrar_mensagem("Compra cancelada.", "vermelho")
+
+    def processar_devolucao_troca(self):
+        cliente_nome = self.view.digitar_texto("Digite o nome do cliente: ")
+        cliente = next(
+            (pessoa for pessoa in Pessoa.clientes if pessoa.nome == cliente_nome),
+            None,
+        )
+        if cliente is None:
+            self.view.mostrar_mensagem("Cliente não encontrado.", "vermelho")
+            return
+
+        itens_elegiveis = []
+        for compra in cliente.compras:
+            for item in compra[0]:
+                if (
+                    item["quantidade_disponivel"] > 0
+                    and Venda.esta_na_garantia(item)
+                ):
+                    itens_elegiveis.append((compra, item))
+
+        if not itens_elegiveis:
+            self.view.mostrar_mensagem(
+                "O cliente não possui produtos dentro do prazo de garantia.",
+                "vermelho",
+            )
+            return
+
+        self.view.mostrar_itens_elegiveis(itens_elegiveis)
+        indice = self.view.digitar_inteiro(
+            "Digite o número do produto: ", minimo=1
+        )
+        if indice > len(itens_elegiveis):
+            self.view.mostrar_mensagem("Produto inválido.", "vermelho")
+            return
+
+        compra, item = itens_elegiveis[indice - 1]
+        quantidade = self.view.digitar_inteiro(
+            "Quantas unidades deseja devolver ou trocar? ", minimo=1
+        )
+        if quantidade > item["quantidade_disponivel"]:
+            self.view.mostrar_mensagem(
+                "Quantidade maior do que a disponível para devolução ou troca.",
+                "vermelho",
+            )
+            return
+
+        operacao = self.view.escolher_operacao_devolucao()
+        try:
+            if operacao == "1":
+                Venda.devolver_produto(compra, item, quantidade)
+                self.view.mostrar_mensagem(
+                    "Devolução realizada com sucesso!", "verde"
+                )
+            elif operacao == "2":
+                Venda.trocar_produto(compra, item, quantidade)
+                self.view.mostrar_mensagem("Troca realizada com sucesso!", "verde")
+            else:
+                self.view.mostrar_mensagem("Opção inválida.", "vermelho")
+        except ValueError as erro:
+            self.view.mostrar_mensagem(str(erro), "vermelho")

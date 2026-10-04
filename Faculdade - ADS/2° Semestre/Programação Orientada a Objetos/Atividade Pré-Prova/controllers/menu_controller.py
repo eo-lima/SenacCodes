@@ -29,6 +29,8 @@ class MenuController:
             elif opcao == "7":
                 self.pessoas.exibir_compras()
             elif opcao == "8":
+                self.vendas.processar_devolucao_troca()
+            elif opcao == "9":
                 self.view.mostrar_mensagem("Saindo...", "vermelho")
                 break
             else:
