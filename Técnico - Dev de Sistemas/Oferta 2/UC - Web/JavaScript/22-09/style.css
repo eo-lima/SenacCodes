@@ -1,0 +1,23 @@
+.span-required{
+    display: none;
+}
+
+#modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.conteudo{
+    background: white;
+    width: 300px;
+    padding: 20px;
+    margin: 150px auto;
+}
+
+/* O elemento fica fixado em relação à janela do navegador */
+/* rhba = a -> Alpha (transparente) */
