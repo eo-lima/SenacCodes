@@ -1,0 +1,15 @@
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\bin\Debug\net10.0\AtividadeCS.exe
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\bin\Debug\net10.0\AtividadeCS.deps.json
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\bin\Debug\net10.0\AtividadeCS.runtimeconfig.json
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\bin\Debug\net10.0\AtividadeCS.dll
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\bin\Debug\net10.0\AtividadeCS.pdb
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.AssemblyInfoInputs.cache
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.AssemblyInfo.cs
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.csproj.CoreCompileInputs.cache
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.sourcelink.json
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.dll
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\refint\AtividadeCS.dll
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.pdb
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\AtividadeCS.genruntimeconfig.cache
+C:\Users\Enzo\Downloads\Lima Codes\Senac Lima Codes\Técnico - Dev de Sistemas\Oferta 2\UC - Mobile\C# no VSCode\AtividadeCS\obj\Debug\net10.0\ref\AtividadeCS.dll
