@@ -10,7 +10,7 @@ def menu():
     return input("Comando: ")
 
 def escolher_usuario():
-    return input("Qual usuário deseja cadastrar? (1 - Tutor, 2 - Pet, 3 - Veterinário) ")
+    return input("Qual usuário deseja? (1 - Tutor, 2 - Pet, 3 - Veterinário) ")
 
 def cadastrar():
     usuario = escolher_usuario()
@@ -24,7 +24,6 @@ def cadastrar():
     elif usuario == "3":
         dados = cadastrar_veterinario_view()
         return {"tipo": "veterinario", **dados}
-
 
 def cadastrar_tutor_view():
     nome = input("Digite o nome do tutor: ")
@@ -60,6 +59,19 @@ def cadastrar_cachorro():
     tutor = input("Digite o CPF do tutor: ")
     return {"nome": nome, "peso": peso, "raca": raca, "cor": cor, "tutor": int(tutor)}
 
+def cadastrar_gato():
+    nome = input("Digite o nome do gato: ")
+    while True:
+        try:
+            peso = float(input("Digite o peso do gato: "))
+            break
+        except ValueError:
+            print("Digite apenas números.")
+            continue
+    cor = input("Digite a cor do gato: ")
+    tutor = input("Digite o CPF do tutor: ")
+    return {"nome": nome, "peso": peso, "cor": cor, "tutor": tutor}
+
 def cadastrar_veterinario_view(): 
     nome = input("Digite o nome do veterinário: ")
     while True:
@@ -71,6 +83,15 @@ def cadastrar_veterinario_view():
             continue
     especialidade = input("Digite a especialidade do veterinário: ")
     return {"nome": nome, "cpf": cpf, "especialidade": especialidade}
+
+def listar_tutores_view(tutores):
+    print(tutores)
+
+def listar_pets_view(pets):
+    print(pets)
+
+def listar_veterinario_view(veterinarios):
+    print(veterinarios)
 
 def erro_cpf():
     return print("Esse CPF já foi registrado.")
