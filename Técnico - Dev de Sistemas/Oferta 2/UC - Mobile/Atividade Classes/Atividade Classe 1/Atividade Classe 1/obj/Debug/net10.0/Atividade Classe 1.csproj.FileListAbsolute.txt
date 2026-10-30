@@ -1,0 +1,15 @@
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\bin\Debug\net10.0\Atividade Classe 1.exe
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\bin\Debug\net10.0\Atividade Classe 1.deps.json
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\bin\Debug\net10.0\Atividade Classe 1.runtimeconfig.json
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\bin\Debug\net10.0\Atividade Classe 1.dll
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\bin\Debug\net10.0\Atividade Classe 1.pdb
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividade Classe 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividade Classe 1.AssemblyInfoInputs.cache
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividade Classe 1.AssemblyInfo.cs
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividade Classe 1.csproj.CoreCompileInputs.cache
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividade Classe 1.dll
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\refint\Atividade Classe 1.dll
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividade Classe 1.pdb
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividade Classe 1.genruntimeconfig.cache
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\ref\Atividade Classe 1.dll
+C:\Users\Enzo\source\repos\Atividade Classe 1\Atividade Classe 1\obj\Debug\net10.0\Atividad.9426897D.Up2Date

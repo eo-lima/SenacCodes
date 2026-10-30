@@ -1,0 +1,37 @@
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.GeneratedMSBuildEditorConfig.editorconfig
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.AssemblyInfoInputs.cache
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.AssemblyInfo.cs
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.csproj.CoreCompileInputs.cache
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.sourcelink.json
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.csproj.AssemblyReference.cache
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/Sistema Cadastro
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/Sistema Cadastro.deps.json
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/Sistema Cadastro.runtimeconfig.json
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/Sistema Cadastro.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/Sistema Cadastro.pdb
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/BouncyCastle.Cryptography.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/Google.Protobuf.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/K4os.Compression.LZ4.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/K4os.Compression.LZ4.Streams.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/K4os.Hash.xxHash.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/MySql.Data.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/System.Configuration.ConfigurationManager.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/System.Diagnostics.EventLog.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/System.Security.Cryptography.ProtectedData.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/System.Security.Permissions.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/System.Windows.Extensions.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/ZstdSharp.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win-x64/native/comerr64.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win-x64/native/gssapi64.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win-x64/native/k5sprt64.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win-x64/native/krb5_64.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win-x64/native/krbcc64.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Diagnostics.EventLog.Messages.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Windows.Extensions.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema .A515E885.Up2Date
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/refint/Sistema Cadastro.dll
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.pdb
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/Sistema Cadastro.genruntimeconfig.cache
+/home/limonada/Downloads/Lima Codes/Senac Lima Codes/Técnico - Dev de Sistemas/Oferta 2/UC - Banco de Dados/Sistema Cadastro/obj/Debug/net9.0/ref/Sistema Cadastro.dll
