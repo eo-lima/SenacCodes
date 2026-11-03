@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/output.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <title>Agendar consulta | Saúde Fácil</title>
+</head>
+<body class="font-sans bg-blue-50">
+    <header class="bg-blue-800">
+        <div class="w-full h-[80px] flex justify-baseline px-5 items-center gap-3">
+            <i class="fa-solid fa-hospital text-white text-2xl"></i>
+            <h1 class="text-3xl text-white font-bold">Saúde Fácil</h1>
+        </div>
+    </header>
+    <main class="mx-auto w-full max-w-[1200px] px-4 pt-8 pb-10 sm:px-6 md:px-8">
+        <section class="mx-auto mt-6 w-full max-w-[520px] sm:mt-8" aria-label="Agendamento de consulta">
+            <button type="button" class="mb-6 inline-flex items-center gap-2 rounded-lg bg-blue-800 px-4 py-2 text-sm text-white duration-200 cursor-pointer hover:bg-blue-900 hover:scale-105 active:scale-100 active:bg-blue-800">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Voltar
+            </button>
+            <div class="rounded-xl bg-white p-4 shadow-sm sm:p-6 md:p-8">
+                <p class="mb-5 rounded-lg bg-slate-100 px-3 py-2 text-sm font-medium text-slate-900 sm:text-base">
+                    <i class="fa-regular fa-clipboard mr-1 text-blue-800" aria-hidden="true"></i>
+                    Paciente: Ana Paula Costa <span class="px-1">·</span> CPF: 456.789.123-00
+                </p>
+
+                <form class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-1">
+                        <label for="medico" class="text-sm font-semibold uppercase text-slate-600">Médico</label>
+                        <input id="medico" name="medico" type="text" value="Dr. Carlos Oliveira" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base">
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label for="data-consulta" class="text-sm font-semibold uppercase text-slate-600">Data</label>
+                        <input id="data-consulta" name="data-consulta" type="text" inputmode="numeric" placeholder="DD/MM/AAAA" class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-base">
+                    </div>
+                    <button type="button" class="mx-auto mt-3 w-full rounded-xl bg-blue-800 px-4 py-3 font-semibold text-white duration-150 hover:bg-blue-900 hover:scale-[1.02] active:scale-100 active:bg-blue-800 sm:w-[80%]">
+                        <i class="fa-solid fa-check mr-1" aria-hidden="true"></i>
+                        Confirmar agendamento
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
